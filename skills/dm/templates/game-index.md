@@ -1,4 +1,4 @@
-# D&D 5e Campaign — Master Index
+# Cyberpunk 5e Campaign — Master Index
 
 > **Start each session by reading `sessions/current.md` — that is the primary save state.**
 
@@ -26,7 +26,7 @@
 
 | File | Contents |
 |------|----------|
-| [world.md](campaign/world.md) | Setting lore, calendar, magic laws |
+| [world.md](campaign/world.md) | Setting lore, calendar, cyberware & net laws, Corporate War state |
 | [factions.md](campaign/factions.md) | Faction details and reputation scores |
 | [clocks.md](campaign/clocks.md) | Tension clocks |
 | [quests.md](campaign/quests.md) | Quest hooks and tracking |
@@ -43,6 +43,6 @@
 
 | File | Contents |
 |------|----------|
-| [party.md](inventory/party.md) | Gold, inventory, equipment (canonical) |
+| [party.md](inventory/party.md) | Eddies (€$), inventory, ammo, cyberware owned (canonical) |
 | [tracker.md](combat/tracker.md) | Active combat state |
 | [houserules.md](rules/houserules.md) | Campaign-specific rulings |

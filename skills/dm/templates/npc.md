@@ -5,8 +5,8 @@
 | Attribute | Value |
 |-----------|-------|
 | Name | — |
-| Race | — |
-| Class/Type | — |
+| Chrome level | None / Light / Heavy / Borg |
+| Role / Type | — |
 | CR | — |
 | Alignment | — |
 | Location | — |

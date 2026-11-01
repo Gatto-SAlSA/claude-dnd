@@ -25,9 +25,12 @@ _None yet._
 | Level | — |
 | HP | —/— |
 | AC | — |
-| Spell Slots | — |
+| RAM / Tech uses | — |
+| Humanity | —/— |
+| Heat | 0 |
+| Ammo | — |
 | Conditions | None |
-| Gold | — |
+| Eddies (€$) | — |
 
 ## Campaign Arc
 
@@ -52,3 +55,4 @@ _None yet._
 
 | Clock | Type | Progress | Next Trigger | Consequence (when full) |
 |-------|------|----------|-------------|------------------------|
+| Corporate War | Faction | 0/8 (Cold War) | Corp job done / 14 days pass | City-wide war stage escalates |

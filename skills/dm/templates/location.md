@@ -4,7 +4,9 @@
 
 | Attribute | Value |
 |-----------|-------|
-| Type | City / Town / Dungeon / Wilderness / Building |
+| Type | District / Megabuilding / Corp Facility / Gang Hideout / Badlands / Net Subnet |
+| Controlled by | — (gang, corp, NCPD, nobody) |
+| ICE | None / Street / Corporate / Black / Arasaka Black |
 | Region | — |
 | Level | — (target PC level for encounters here) |
 | Population | — |
