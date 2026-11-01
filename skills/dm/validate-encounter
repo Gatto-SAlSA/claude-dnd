@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Validate encounter balance for a solo D&D 5e campaign.
+"""Validate encounter balance for a solo cyberpunk 5e campaign.
 
 Usage:
-  ./validate-encounter --level 1 --difficulty hard --enemies "wolf:1/4" "goblin:1/4"
-  ./validate-encounter --level 1 --difficulty medium --enemies "skeleton:1/8"
-  ./validate-encounter --level 3 --difficulty hard --enemies "bugbear:1"
-  ./validate-encounter --level 1 --enemies "shadow:1/2"  (defaults to hard)
+  ./validate-encounter --level 1 --difficulty hard --enemies "ganger:1/4" "street-punk:1/8"
+  ./validate-encounter --level 1 --difficulty medium --enemies "security-drone:1/8"
+  ./validate-encounter --level 3 --difficulty hard --enemies "arasaka-guard:1"
+  ./validate-encounter --level 1 --enemies "ncpd-officer:1/2"  (defaults to hard)
 
 Arguments:
   --level N         Player character level (required)
@@ -18,20 +18,50 @@ import sys
 # CR caps per level per difficulty (solo-adjusted)
 # Format: CR_CAPS[level][difficulty] = max CR for a single enemy
 CR_CAPS = {
-    1: {"easy": 0,     "medium": 0.125, "hard": 0.25,  "deadly": 0.5},
-    2: {"easy": 0.125, "medium": 0.25,  "hard": 0.5,   "deadly": 1},
-    3: {"easy": 0.25,  "medium": 0.5,   "hard": 1,     "deadly": 2},
-    4: {"easy": 0.5,   "medium": 1,     "hard": 2,     "deadly": 3},
-    5: {"easy": 1,     "medium": 2,     "hard": 3,     "deadly": 5},
+    1: {"easy": 0, "medium": 0.125, "hard": 0.25, "deadly": 0.5},
+    2: {"easy": 0.125, "medium": 0.25, "hard": 0.5, "deadly": 1},
+    3: {"easy": 0.25, "medium": 0.5, "hard": 1, "deadly": 2},
+    4: {"easy": 0.5, "medium": 1, "hard": 2, "deadly": 3},
+    5: {"easy": 1, "medium": 2, "hard": 3, "deadly": 5},
+    6: {"easy": 2, "medium": 3, "hard": 4, "deadly": 6},
+    7: {"easy": 2, "medium": 3, "hard": 5, "deadly": 7},
+    8: {"easy": 3, "medium": 4, "hard": 6, "deadly": 8},
+    9: {"easy": 3, "medium": 5, "hard": 7, "deadly": 9},
+    10: {"easy": 4, "medium": 6, "hard": 8, "deadly": 10},
+    11: {"easy": 4, "medium": 6, "hard": 9, "deadly": 11},
+    12: {"easy": 5, "medium": 7, "hard": 10, "deadly": 12},
+    13: {"easy": 5, "medium": 8, "hard": 11, "deadly": 13},
+    14: {"easy": 6, "medium": 9, "hard": 12, "deadly": 14},
+    15: {"easy": 6, "medium": 10, "hard": 13, "deadly": 15},
+    16: {"easy": 7, "medium": 10, "hard": 14, "deadly": 16},
+    17: {"easy": 8, "medium": 11, "hard": 15, "deadly": 17},
+    18: {"easy": 8, "medium": 12, "hard": 16, "deadly": 18},
+    19: {"easy": 9, "medium": 13, "hard": 17, "deadly": 19},
+    20: {"easy": 10, "medium": 14, "hard": 18, "deadly": 20},
 }
 
 # Max single-hit damage thresholds
 MAX_DAMAGE = {
-    1: {"easy": 6,  "medium": 8,  "hard": 10, "deadly": 999},
+    1: {"easy": 6, "medium": 8, "hard": 10, "deadly": 999},
     2: {"easy": 10, "medium": 12, "hard": 14, "deadly": 999},
     3: {"easy": 14, "medium": 18, "hard": 20, "deadly": 999},
     4: {"easy": 20, "medium": 24, "hard": 27, "deadly": 999},
     5: {"easy": 26, "medium": 30, "hard": 34, "deadly": 999},
+    6: {"easy": 31, "medium": 37, "hard": 41, "deadly": 999},
+    7: {"easy": 36, "medium": 42, "hard": 48, "deadly": 999},
+    8: {"easy": 41, "medium": 48, "hard": 54, "deadly": 999},
+    9: {"easy": 46, "medium": 54, "hard": 61, "deadly": 999},
+    10: {"easy": 52, "medium": 61, "hard": 68, "deadly": 999},
+    11: {"easy": 56, "medium": 66, "hard": 75, "deadly": 999},
+    12: {"easy": 61, "medium": 72, "hard": 81, "deadly": 999},
+    13: {"easy": 67, "medium": 78, "hard": 88, "deadly": 999},
+    14: {"easy": 72, "medium": 85, "hard": 95, "deadly": 999},
+    15: {"easy": 77, "medium": 90, "hard": 102, "deadly": 999},
+    16: {"easy": 82, "medium": 96, "hard": 108, "deadly": 999},
+    17: {"easy": 87, "medium": 102, "hard": 115, "deadly": 999},
+    18: {"easy": 92, "medium": 109, "hard": 122, "deadly": 999},
+    19: {"easy": 97, "medium": 114, "hard": 129, "deadly": 999},
+    20: {"easy": 102, "medium": 120, "hard": 135, "deadly": 999},
 }
 
 # CR stat benchmarks: (HP range, AC range, attack bonus, damage/round, max single hit)
@@ -45,6 +75,21 @@ CR_STATS = {
     3:     {"hp": "61-80",  "ac": "13-14", "atk": "+5 to +6", "dmg_round": "21-26", "max_hit": 26},
     4:     {"hp": "81-100", "ac": "14",    "atk": "+6",       "dmg_round": "27-32", "max_hit": 32},
     5:     {"hp": "101-120","ac": "15",    "atk": "+7",       "dmg_round": "33-38", "max_hit": 38},
+    6: {"hp": "176-190", "ac": "15", "atk": "+7", "dmg_round": "39-44", "max_hit": 26},
+    7: {"hp": "191-205", "ac": "15", "atk": "+7", "dmg_round": "45-50", "max_hit": 30},
+    8: {"hp": "206-220", "ac": "16", "atk": "+7", "dmg_round": "51-56", "max_hit": 34},
+    9: {"hp": "221-235", "ac": "16", "atk": "+8", "dmg_round": "57-62", "max_hit": 37},
+    10: {"hp": "236-250", "ac": "17", "atk": "+8", "dmg_round": "63-68", "max_hit": 41},
+    11: {"hp": "251-265", "ac": "17", "atk": "+8", "dmg_round": "69-74", "max_hit": 44},
+    12: {"hp": "266-280", "ac": "17", "atk": "+8", "dmg_round": "75-80", "max_hit": 48},
+    13: {"hp": "281-295", "ac": "18", "atk": "+8", "dmg_round": "81-86", "max_hit": 52},
+    14: {"hp": "296-310", "ac": "18", "atk": "+8", "dmg_round": "87-92", "max_hit": 55},
+    15: {"hp": "311-325", "ac": "18", "atk": "+8", "dmg_round": "93-98", "max_hit": 59},
+    16: {"hp": "326-340", "ac": "18", "atk": "+9", "dmg_round": "99-104", "max_hit": 62},
+    17: {"hp": "341-355", "ac": "19", "atk": "+10", "dmg_round": "105-110", "max_hit": 66},
+    18: {"hp": "356-400", "ac": "19", "atk": "+10", "dmg_round": "111-116", "max_hit": 70},
+    19: {"hp": "401-445", "ac": "19", "atk": "+10", "dmg_round": "117-122", "max_hit": 73},
+    20: {"hp": "446-490", "ac": "19", "atk": "+10", "dmg_round": "123-140", "max_hit": 84},
 }
 
 MAX_SOLO_ENEMIES = 2
@@ -86,7 +131,7 @@ def validate(level, difficulty, enemies):
     warnings = []
 
     if level not in CR_CAPS:
-        errors.append(f"Level {level} not in range 1-5. Add to CR_CAPS if needed.")
+        errors.append(f"Level {level} not in range 1-20.")
         return errors, warnings
 
     max_cr = CR_CAPS[level][difficulty]
@@ -166,7 +211,7 @@ def main():
         sys.exit(1)
 
     if not enemy_strs:
-        print("ERROR: --enemies is required (e.g., --enemies \"wolf:1/4\")")
+        print("ERROR: --enemies is required (e.g., --enemies \"ganger:1/4\")")
         sys.exit(1)
 
     if difficulty not in ("easy", "medium", "hard", "deadly"):

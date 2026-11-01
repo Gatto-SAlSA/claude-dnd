@@ -2,19 +2,28 @@
 
 ## Currency
 
-| Denomination | Amount |
-|-------------|--------|
-| Platinum (pp) | 0 |
-| Gold (gp) | 0 |
-| Silver (sp) | 0 |
-| Copper (cp) | 0 |
+| Account | Eurodollars (€$) |
+|---------|------------------|
+| Cash credchips | 0 |
+| Bank account (credits) | 0 |
+| Debts owed | 0 |
 
 ## Equipment
 
 | Item | Qty | Weight | Notes |
 |------|-----|--------|-------|
 
-## Consumables
+## Ammo
+
+| Type | Magazines | Notes |
+|------|-----------|-------|
+
+## Cyberware Owned (not installed)
+
+| Cyberware | Tier | Value (€$) | Notes |
+|-----------|------|------------|-------|
+
+## Consumables (MaxDocs, stims, grenades)
 
 | Item | Qty | Effect |
 |------|-----|--------|
@@ -26,4 +35,4 @@
 
 ## Stashed / Stored
 
-_Items left at a safe location._
+_Items left at a safehouse, apartment or vehicle trunk._

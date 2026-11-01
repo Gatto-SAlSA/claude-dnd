@@ -101,7 +101,7 @@ _None._
 | Status | Active / Completed / Failed / Abandoned |
 | Given By | NPC or event |
 | Location | Where it takes place |
-| Reward | Gold, items, reputation, XP |
+| Reward | Eddies (€$), chrome, gear, reputation, XP |
 | Difficulty | Standard / Major |
 | Type | Investigation / Hunt / Retrieval / Defense / Escort / Heist / Negotiation / Survival / Exploration |
 | Parent Milestone | — (only if this is a subquest) |

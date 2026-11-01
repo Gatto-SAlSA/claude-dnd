@@ -1,5 +1,5 @@
 ---
-description: Resume a D&D campaign session from the saved game state
+description: Resume a cyberpunk campaign session from the saved game state
 disable-model-invocation: true
 ---
 
@@ -13,6 +13,8 @@ Resume the campaign by following these steps exactly:
 4. **Pre-load for speed** (read these now so they're in context all session):
    - `${CLAUDE_PLUGIN_ROOT}/skills/dm/templates/npc-agent-prompt.md` — NPC conversation template
    - `${CLAUDE_PLUGIN_ROOT}/skills/dm/random-tables.md` — random event tables
+   - `${CLAUDE_PLUGIN_ROOT}/skills/dm/cyberpunk.md` — setting rules (eddies, cyberware, Humanity, netrunning, Corporate War, Heat)
+   - `${CLAUDE_PLUGIN_ROOT}/skills/dm/bestiary.md` — enemy stat blocks
 5. Summarize where we left off **from the files** (not from memory)
 6. Present the current scene with sensory details and available actions
 

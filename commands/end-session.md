@@ -1,5 +1,5 @@
 ---
-description: End the current D&D session and save all game state
+description: End the current cyberpunk session and save all game state
 disable-model-invocation: true
 ---
 

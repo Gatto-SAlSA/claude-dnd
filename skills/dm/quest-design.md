@@ -32,7 +32,7 @@ Good: "Find the missing salvage crew in Blackspire Ridge." (Clear target, clear 
 
 What does the player gain on success? What do they lose on failure? Stakes can be:
 - **Personal:** Someone they care about, their reputation, their freedom
-- **Material:** Gold, items, access, faction standing
+- **Material:** Eddies (€$), chrome, gear, access, faction standing
 - **World:** People die, a place is destroyed, an enemy grows stronger
 - **Escalation:** Failure makes a bigger problem — a clock ticks, a faction acts
 
@@ -53,7 +53,7 @@ A quest should have 2-3 distinct obstacles, not just a clue trail.
 
 At least one meaningful decision with trade-offs. Not "do you do the quest or not" — a decision *within* the quest:
 - **Competing interests:** Two factions want different outcomes. Who do you side with?
-- **Cost:** You can succeed, but it requires a sacrifice (gold, an ally, your reputation)
+- **Cost:** You can succeed, but it requires a sacrifice (eddies, an ally, your reputation, a piece of your Humanity)
 - **Method:** Stealth or force? Diplomacy or deception? Each has consequences.
 - **Mercy:** The antagonist has a sympathetic motive. Do you still stop them?
 - **Priority:** Two problems, only time to solve one.

@@ -1,6 +1,6 @@
 # Encounter Guidelines — Quick Reference
 
-Use this when improvising creatures during play. Match stats to the party's level and desired difficulty.
+Use this when improvising enemies during play. Ready-made cyberpunk enemies are in `bestiary.md`; use those first. Match stats to the party's level and desired difficulty.
 
 ---
 
@@ -27,6 +27,14 @@ Use these as guardrails when creating creatures on the fly.
 | 3 | 61-80 | 13-14 | +5 to +6 | 21-26 | 13-14 |
 | 4 | 81-100 | 14 | +6 | 27-32 | 14 |
 | 5 | 101-120 | 15 | +7 | 33-38 | 15 |
+| 6 | 176-190 | 15 | +7 | 39-44 | 15 |
+| 7 | 191-205 | 15 | +7 | 45-50 | 15 |
+| 8 | 206-220 | 16 | +7 | 51-56 | 16 |
+| 9 | 221-235 | 16 | +8 | 57-62 | 16 |
+| 10 | 236-250 | 17 | +8 | 63-68 | 16 |
+| 12 | 266-280 | 17 | +8 | 75-80 | 17 |
+| 15 | 311-325 | 18 | +8 | 93-98 | 18 |
+| 20 | 446-490 | 19 | +10 | 123-140 | 19 |
 
 ---
 
@@ -38,10 +46,10 @@ Use these as guardrails when creating creatures on the fly.
 
 | Difficulty | Target CR | Example Creature | Key Stats |
 |------------|-----------|-----------------|-----------|
-| Easy | CR 0 | Rat, bat, commoner | HP 1-6, +2 hit, 1-3 dmg |
-| Medium | CR 1/8 | Corrupted rat, skeleton | HP 7-12, +3 hit, 4-5 dmg |
-| Hard | CR 1/4 | Wolf, goblin, zombie | HP 13-20, +4 hit, 5-7 dmg |
-| Deadly | CR 1/2 | Gnoll, shadow, warg | HP 21-30, +4 hit, 7-9 dmg |
+| Easy | CR 0 | Street bystander, vending bot | HP 1-6, +2 hit, 1-3 dmg |
+| Medium | CR 1/8 | Street punk, security drone | HP 7-12, +3 hit, 4-5 dmg |
+| Hard | CR 1/4 | Ganger, cyber-hound, hijacked drone | HP 13-20, +4 hit, 5-7 dmg |
+| Deadly | CR 1/2 | NCPD officer, gang booster, sentry turret | HP 21-30, +4 hit, 7-9 dmg |
 
 **Rules for Level 1:**
 - Maximum single-hit damage should not exceed **8** (Medium) or **10** (Hard)
@@ -53,28 +61,32 @@ Use these as guardrails when creating creatures on the fly.
 
 | Difficulty | Target CR | Example Creature |
 |------------|-----------|-----------------|
-| Easy | CR 1/8 | Skeleton, cultist |
-| Medium | CR 1/4 | Goblin, wolf, zombie |
-| Hard | CR 1/2 | Gnoll, shadow, orc |
-| Deadly | CR 1 | Bugbear, ghoul, dire wolf |
+| Easy | CR 1/8 | Street punk, security drone |
+| Medium | CR 1/4 | Ganger, cyber-hound |
+| Hard | CR 1/2 | NCPD officer, gang booster |
+| Deadly | CR 1 | Arasaka guard, gang netrunner, scavenger |
 
 ### Level 3 (20-28 HP PCs)
 
 | Difficulty | Target CR | Example Creature |
 |------------|-----------|-----------------|
-| Easy | CR 1/4 | Wolf, goblin |
-| Medium | CR 1/2 | Gnoll, orc, warg |
-| Hard | CR 1 | Bugbear, ghoul, specter |
-| Deadly | CR 2 | Ogre, gargoyle, ghast |
+| Easy | CR 1/4 | Ganger, hijacked drone |
+| Medium | CR 1/2 | NCPD officer, sentry turret |
+| Hard | CR 1 | Arasaka guard, gang netrunner |
+| Deadly | CR 2 | Militech soldier, mercenary, rogue AI android |
 
 ### Levels 4-5 (28-40 HP PCs)
 
 | Difficulty | Target CR | Example Creature |
 |------------|-----------|-----------------|
-| Easy | CR 1/2-1 | Orc, gnoll |
-| Medium | CR 1-2 | Ghoul, ogre, gargoyle |
-| Hard | CR 2-3 | Manticore, werewolf, owlbear |
-| Deadly | CR 3-5 | Troll, hell hound, young dragon |
+| Easy | CR 1/2-1 | NCPD officer, Arasaka guard |
+| Medium | CR 1-2 | Arasaka guard, Militech soldier |
+| Hard | CR 2-3 | Mercenary, corporate netrunner |
+| Deadly | CR 3-5 | Arasaka shadow, cyberpsycho, exoskeleton trooper |
+
+### Levels 6-20
+
+Use the CR caps built into `validate-encounter` (it now covers levels 1-20) and the "Enemy by Level" table at the end of `bestiary.md`. Typical progression: Militech soldiers and cyberpsychos at 6-8, MaxTac and rogue AI combat frames at 9-12, Militech mechs, Arasaka black-ops and rogue AI avatars at 13+.
 
 ---
 
@@ -101,8 +113,8 @@ When creating a creature on the fly:
 3. **Choose ONE special ability** (not multiple):
    - A resistance or immunity
    - A condition on hit (poison, grapple, fear)
-   - A recharge ability (breath weapon, charge attack)
-   - A defensive trait (regeneration, pack tactics)
+   - A recharge ability (rocket salvo, Sandevistan burst, charge attack)
+   - A defensive trait (subdermal armor, optical camo, gang tactics)
 4. **Give it a weakness** the player can discover or exploit
 5. **Write down the stats** in the combat tracker before the fight starts
 
@@ -111,7 +123,7 @@ When creating a creature on the fly:
 ```
 **[Creature Name]** — CR [X]
 HP: [Y] | AC: [Z] | Speed: [N] ft
-Attack: [weapon/natural] +[bonus] to hit, [dice]+[mod] [type] damage
+Attack: [weapon/implant/quickhack] +[bonus] to hit, [dice]+[mod] [type] damage
 Special: [one ability]
 Weakness: [something exploitable]
 ```
@@ -129,6 +141,10 @@ Weakness: [something exploitable]
 | 3 | 24 | 18 | 20 |
 | 4 | 30 | 24 | 27 |
 | 5 | 38 | 30 | 34 |
+| 8 | 60 | 48 | 54 |
+| 10 | 75 | 60 | 68 |
+| 15 | 113 | 90 | 101 |
+| 20 | 150 | 120 | 135 |
 
 ---
 
@@ -137,14 +153,14 @@ Weakness: [something exploitable]
 If an encounter is too hard mid-fight, use the environment:
 - Cover that grants +2 or +5 AC
 - Chokepoints that prevent flanking
-- Hazards the player can use (falling debris, fire, collapsing floor)
+- Hazards the player can use (exploding cars, live wiring, hackable turrets, collapsing floor)
 - Escape routes — retreat is always a valid option
-- Ally intervention (an NPC arrives, the creature's rival attacks it)
+- Ally intervention (an NPC arrives, a rival gang or corp crew attacks the enemy, Trauma Team AV overhead)
 
 If an encounter is too easy:
 - Reinforcements arrive
 - The environment shifts (rising water, collapsing ceiling)
-- The creature reveals a second phase or ability
+- The enemy pops a stim, activates chrome, or a netrunner joins the fight
 
 ---
 

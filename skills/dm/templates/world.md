@@ -2,7 +2,7 @@
 
 ## Setting
 
-_To be filled during world generation._
+_A cyberpunk megacity during the Arasaka–Militech Corporate War. Fill in during world generation: the city's name, its districts, the Badlands beyond, and who runs what. Defaults in the plugin's `cyberpunk.md`._
 
 ## Calendar
 
@@ -11,19 +11,25 @@ _To be filled during world generation._
 | Current Date | — |
 | Current Time | — |
 | Season | — |
+| Corporate War Stage | Cold War (0/8) |
 
 ### Calendar System
 
-_Define months, days, seasons as appropriate for the setting._
+_Standard calendar (the year is the campaign's choice, e.g. the 2070s). Track days for the Corporate War clock: +1 every 14 days._
 
 ## Lore
 
 _Key world lore, history, and cosmology._
 
-## Magic
+## Cyberware & The Net
 
-_How magic works in this setting — common, rare, outlawed, etc._
+_No magic exists. Note how common chrome is, which cyberware is legal or restricted, how cyberpsychos are handled (MaxTac), and what's known about the Blackwall and rogue AIs._
+
+## Districts
+
+| District | Who controls it | Vibe | Danger |
+|----------|-----------------|------|--------|
 
 ## Technology
 
-_General technology level and notable innovations._
+_Flying AVs, smart weapons, neural links, braindance, combat exoskeletons, prototype Sandevistans. Note anything unique to this city._

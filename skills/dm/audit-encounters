@@ -19,11 +19,26 @@ import glob
 # --- Validation logic (shared with validate-encounter) ---
 
 CR_CAPS = {
-    1: {"easy": 0,     "medium": 0.125, "hard": 0.25,  "deadly": 0.5},
-    2: {"easy": 0.125, "medium": 0.25,  "hard": 0.5,   "deadly": 1},
-    3: {"easy": 0.25,  "medium": 0.5,   "hard": 1,     "deadly": 2},
-    4: {"easy": 0.5,   "medium": 1,     "hard": 2,     "deadly": 3},
-    5: {"easy": 1,     "medium": 2,     "hard": 3,     "deadly": 5},
+    1: {"easy": 0, "medium": 0.125, "hard": 0.25, "deadly": 0.5},
+    2: {"easy": 0.125, "medium": 0.25, "hard": 0.5, "deadly": 1},
+    3: {"easy": 0.25, "medium": 0.5, "hard": 1, "deadly": 2},
+    4: {"easy": 0.5, "medium": 1, "hard": 2, "deadly": 3},
+    5: {"easy": 1, "medium": 2, "hard": 3, "deadly": 5},
+    6: {"easy": 2, "medium": 3, "hard": 4, "deadly": 6},
+    7: {"easy": 2, "medium": 3, "hard": 5, "deadly": 7},
+    8: {"easy": 3, "medium": 4, "hard": 6, "deadly": 8},
+    9: {"easy": 3, "medium": 5, "hard": 7, "deadly": 9},
+    10: {"easy": 4, "medium": 6, "hard": 8, "deadly": 10},
+    11: {"easy": 4, "medium": 6, "hard": 9, "deadly": 11},
+    12: {"easy": 5, "medium": 7, "hard": 10, "deadly": 12},
+    13: {"easy": 5, "medium": 8, "hard": 11, "deadly": 13},
+    14: {"easy": 6, "medium": 9, "hard": 12, "deadly": 14},
+    15: {"easy": 6, "medium": 10, "hard": 13, "deadly": 15},
+    16: {"easy": 7, "medium": 10, "hard": 14, "deadly": 16},
+    17: {"easy": 8, "medium": 11, "hard": 15, "deadly": 17},
+    18: {"easy": 8, "medium": 12, "hard": 16, "deadly": 18},
+    19: {"easy": 9, "medium": 13, "hard": 17, "deadly": 19},
+    20: {"easy": 10, "medium": 14, "hard": 18, "deadly": 20},
 }
 
 MAX_SOLO_ENEMIES = 2
@@ -51,7 +66,7 @@ def validate_encounter(level, difficulty, enemies):
     warnings = []
 
     if level not in CR_CAPS:
-        errors.append(f"Level {level} not in range 1-5")
+        errors.append(f"Level {level} not in range 1-20")
         return errors, warnings
 
     max_cr = CR_CAPS[level][difficulty]

@@ -35,7 +35,9 @@ _Round-by-round breakdown:_
 | Category | Change |
 |----------|--------|
 | HP | — -> — |
-| Gold | +/- amount |
+| Eddies (€$) | +/- amount |
+| Heat | +/- |
+| Humanity | +/- |
 | Items Gained | — |
 | Items Lost | — |
 | XP Gained | — |

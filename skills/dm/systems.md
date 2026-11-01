@@ -21,17 +21,17 @@ Since this is a solo campaign (one PC, no party), these rules keep things viable
 
 ### Sidekick Option
 - At campaign start or when narratively appropriate, offer the player a sidekick NPC
-- Sidekick uses simplified Tasha's rules: **Warrior** (melee/tank), **Expert** (skills/utility), or **Spellcaster** (support/healing)
+- Sidekick uses simplified Tasha's rules: **Warrior** (solo/muscle), **Expert** (fixer/techie/driver), or **Spellcaster** reskinned as a **Netrunner** or **Medtech** (support/healing)
 - The sidekick is DM-controlled but follows the player's lead in combat and exploration
 - The sidekick has their own character file in `game/characters/npcs/`
 - The sidekick levels up with the player and has their own personality, but defers to the PC for decisions
 
 ### Safety Net
-- When the solo PC drops to 0 HP **outside of combat**, they automatically stabilize (no death saves) — they're alone, no one is finishing them off unless narratively forced (e.g., assassination, trap)
-- In combat, standard death save rules apply
+- When the solo PC drops to 0 HP **outside of combat**, they automatically stabilize (no death saves) — no one is finishing them off unless narratively forced (e.g., assassination, trap, scavengers)
+- In combat, standard death save rules apply, plus **Trauma Team** coverage if subscribed (see `cyberpunk.md`)
 
 ### Healing Access
-- If no healer is in the party, healing potions are **common loot** and always available at shops
+- If no medtech is in the party, **MaxDocs** and **BounceBacks** are **common loot** and always available from ripperdocs and vending machines
 - Short rests are encouraged — remind the player when appropriate
 
 ---
@@ -49,9 +49,10 @@ Clocks track off-screen threats, player progress, and faction agendas. Tracked i
 - **At each scene boundary checkpoint:** Check all active clocks — did any triggers occur?
 - **When significant time passes:** Travel, rests, downtime — advance time-based clocks
 - **After major player actions:** Success or failure on quests, faction interactions
-- **At each dawn** (in-world): Advance any daily clocks
+- **At each dawn** (in-world): Advance any daily clocks; every 14 in-world days, advance Corporate War by 1
 
 ### Creating Clocks
+- Always run the **Corporate War** clock (8 segments) and track **Heat** (0-5); rules in `cyberpunk.md`
 - Create clocks when introducing threats, faction agendas, or long-term goals
 - Match segment count to urgency: 4 (imminent), 6 (standard), 8 (slow burn)
 - Always define the consequence before starting the clock
@@ -73,7 +74,7 @@ The world moves and surprises. Random tables in [random-tables.md](random-tables
 
 1. Roll d20
 2. On **1-10:** Nothing notable — describe the atmosphere, move on
-3. On **11-20:** Use the corresponding entry from the relevant table (Town, Road, Wilderness, Dungeon). **Do not show the raw table entry to the player** — it is DM-facing only.
+3. On **11-20:** Use the corresponding entry from the relevant table (Street, Highway, Badlands, Facility, Net). **Do not show the raw table entry to the player** — it is DM-facing only.
 4. **Narrate the scene first**, then prompt for any required rolls. Describe what happens in the fiction — the player should feel the danger before seeing the dice. Apply the table entry's full mechanical effect (saves, combat, skill checks, hazards). Do not skip mechanics for flavor-only narration.
 5. **Quest-like encounter?** If the encounter has mystery, ongoing threat, or investigation potential that won't resolve in this scene, **pause narration and create a quest** following the quest-design protocol in `${CLAUDE_SKILL_DIR}/quest-design.md` (Minor difficulty fits most random encounters). Define the truth and write all quest files before the player interacts with it. Then narrate the hook.
 6. **Check active quest secrets** — if the random event can plausibly connect to a quest's evidence trail, use it to surface a clue or reinforce the quest's truth. Aim for ~1 in 3 random events to tie back to an active quest.
@@ -95,11 +96,11 @@ Track how factions and organizations view the player. Managed in `game/campaign/
 | -2/-1 | Unfriendly | Refuses service, may report player, increased prices |
 | 0 | Unknown | No relationship — neutral default |
 | +1/+2 | Friendly | Willing to trade, share public info, offer minor aid |
-| +3/+4 | Trusted | Offers quests, discounts, safe houses, shares secrets |
+| +3/+4 | Trusted | Offers gigs, discounts, safehouses, chrome, shares secrets |
 | +5 | Champion | Full faction resources available, seats at the table, legend status |
 
 ### What Shifts Reputation
-- Completing a faction quest: **+1 to +2**
+- Completing a faction gig: **+1 to +2**
 - Significant favor or gift: **+1**
 - Saving a faction member's life: **+1 to +2**
 - Betraying the faction: **-2 to -3**
@@ -110,9 +111,10 @@ Track how factions and organizations view the player. Managed in `game/campaign/
 
 ### Threshold Effects
 - **+2:** Faction offers side quests and discounts (10-20% off)
-- **+4:** Access to faction secrets, safe houses, and restricted resources
+- **+4:** Access to faction secrets, safehouses, mil-spec chrome and restricted resources
 - **-2:** Faction refuses service; NPCs are cold or dismissive
-- **-4:** Faction actively works against the player (sends agents, spreads rumors, blocks resources)
+- **-4:** Faction actively works against the player (sends kill teams, posts bounties, freezes accounts, blocks resources)
+- **Arasaka vs. Militech:** +1 with one is −1 with the other once the Corporate War clock reaches 3
 
 ### NPC vs Faction Disposition
 - Individual NPC disposition is tracked separately in their `.md` file
@@ -126,7 +128,7 @@ Track how factions and organizations view the player. Managed in `game/campaign/
 Track the passage of in-world time. The current date and time are recorded in `game/campaign/world.md` under the Calendar section.
 
 ### Time Rules
-- **Advance time explicitly:** Travel, rests, downtime, and waiting all cost time. Announce it: *"Two days pass on the road..."*
+- **Advance time explicitly:** Travel, rests, downtime, and waiting all cost time. Announce it: *"Two days pass hiding in a coffin hotel..."*
 - **Short rest** = 1 hour | **Long rest** = 8 hours
 - **Travel time** = per the connection table in location files
 - **Downtime** = the player declares how long; advance accordingly

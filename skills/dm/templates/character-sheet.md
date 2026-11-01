@@ -5,11 +5,12 @@
 | Attribute | Value |
 |-----------|-------|
 | Name | — |
-| Race | — |
-| Class | — |
+| Handle (street name) | — |
+| Origin | Standard / Edgerunner |
+| Role (5e chassis) | — (e.g., Solo / Fighter) |
 | Level | 1 |
-| Background | — |
-| Alignment | — |
+| Lifepath | — |
+| Code (alignment) | — |
 | Experience Points | 0 |
 | Next Level At | 300 |
 
@@ -47,8 +48,8 @@
 | Skill | Ability | Proficient | Bonus |
 |-------|---------|------------|-------|
 | Acrobatics | DEX | ☐ | +0 |
-| Animal Handling | WIS | ☐ | +0 |
-| Arcana | INT | ☐ | +0 |
+| Driving | WIS | ☐ | +0 |
+| Netrunning | INT | ☐ | +0 |
 | Athletics | STR | ☐ | +0 |
 | Deception | CHA | ☐ | +0 |
 | History | INT | ☐ | +0 |
@@ -56,11 +57,11 @@
 | Intimidation | CHA | ☐ | +0 |
 | Investigation | INT | ☐ | +0 |
 | Medicine | WIS | ☐ | +0 |
-| Nature | INT | ☐ | +0 |
+| Cybertech | INT | ☐ | +0 |
 | Perception | WIS | ☐ | +0 |
 | Performance | CHA | ☐ | +0 |
 | Persuasion | CHA | ☐ | +0 |
-| Religion | INT | ☐ | +0 |
+| Streetwise | INT | ☐ | +0 |
 | Sleight of Hand | DEX | ☐ | +0 |
 | Stealth | DEX | ☐ | +0 |
 | Survival | WIS | ☐ | +0 |
@@ -89,27 +90,56 @@ _None_
 
 ## Features & Traits
 
-### Racial Traits
+### Origin Traits
 _None yet_
 
 ### Class Features
 _None yet_
 
-### Background Feature
+### Lifepath Feature
 _None yet_
 
 ### Feats
 _None_
 
-## Spellcasting
+## Humanity
 
 | Attribute | Value |
 |-----------|-------|
-| Spellcasting Ability | — |
-| Spell Save DC | — |
-| Spell Attack Bonus | — |
+| Humanity Max (WIS × 5) | — |
+| Current Humanity | — |
+| Recovery Floor (Max − ½ installed cost) | — |
+| State | Stable / Chrome Strain / Edge / Cyberpsychosis |
 
-### Spell Slots
+## Cyberware
+
+| Slot | Cyberware | Tier | Humanity Cost | Uses / Recharge | Notes |
+|------|-----------|------|---------------|-----------------|-------|
+| Operating System | — | — | — | — | — |
+| Frontal Cortex | — | — | — | — | — |
+| Ocular | — | — | — | — | — |
+| Arms | — | — | — | — | — |
+| Hands | — | — | — | — | — |
+| Legs | — | — | — | — | — |
+| Skeleton | — | — | — | — | — |
+| Skin | — | — | — | — | — |
+| Nervous / Circulatory | — | — | — | — | — |
+
+### Slotted Chips
+_None_
+
+## Netrunning / Tech Abilities
+
+_Quickhacks (Netrunner, Chrome-born), gadgets (Techie), med-tech (Medtech), or implant powers (Corpo Agent). Record each as "Quickhack name (underlying 5e spell)"._
+
+| Attribute | Value |
+|-----------|-------|
+| Ability | — |
+| Quickhack / Tech Save DC | — |
+| Quickhack / Tech Attack Bonus | — |
+| Cyberdeck | — |
+
+### RAM Slots (spell slots)
 
 | Level | Total | Used | Remaining |
 |-------|-------|------|-----------|
@@ -123,10 +153,10 @@ _None_
 | 8th | 0 | 0 | 0 |
 | 9th | 0 | 0 | 0 |
 
-### Cantrips
+### Cantrip-tier Hacks / Gadgets (at will)
 _None_
 
-### Known/Prepared Spells
+### Loaded Quickhacks / Gadgets
 _None_
 
 ## Equipment
@@ -139,6 +169,8 @@ _See Party Inventory (game/inventory/party.md) for full details._
 | Armor | — |
 | Main Hand | — |
 | Off Hand | — |
+| Sidearm | — |
+| Vehicle | — |
 | — | — |
 
 ## Backstory
@@ -163,6 +195,8 @@ _Physical description._
 | Attribute | Value |
 |-----------|-------|
 | Exhaustion Level | 0 |
+| Heat (NCPD) | 0 |
+| Trauma Team Plan | None |
 | Active Conditions | None |
 | Temp Effects | None |
 | Last Short Rest | — |
@@ -170,4 +204,4 @@ _Physical description._
 
 ## Notes
 
-_Additional notes, allies, organizations, etc._
+_Contacts, fixers, ripperdoc, safehouses, debts._

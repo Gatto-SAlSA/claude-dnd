@@ -1,7 +1,7 @@
 {
   "name": "claude-dnd",
-  "description": "D&D 5e game engine for Claude Code. Play solo tabletop RPG campaigns with persistent file-based game state, transparent dice rolling, and full 5e rules.",
-  "version": "0.5.0",
+  "description": "Cyberpunk 5e game engine for Claude Code. Play solo tabletop RPG campaigns in a megacity at war, with cyberware, netrunning, persistent file-based game state and transparent dice rolling.",
+  "version": "0.6.0",
   "author": {
     "name": "Sergey Khval"
   }
